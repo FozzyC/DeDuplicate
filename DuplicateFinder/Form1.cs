@@ -60,36 +60,63 @@ namespace DuplicateFinder
 
             Dictionary<string, string> fileDictionary =new Dictionary<string, string>();
 
+            /*Set up the Progress Bar*/
+           
+            progressBar1.Visible = true;
+            progressBar1.Minimum = 1;
+            progressBar1.Maximum = fileList.Count;
+            progressBar1.Value = 1;
+            progressBar1.Step = 1;
+
+
+
             if (cmbSearchMethod.Text == "Content")
             {
                 foreach (var f in fileList)
                 {
                     if (chkEXIF.Checked && imageExtensions.Contains(Path.GetExtension(f).ToUpper()))
                     {
-                        //convert to bitmap to remove EXIF data. 
-                        Bitmap bmp = (Bitmap)Image.FromFile(f);
-                        byte[] hash;
-                        
-                        using (MemoryStream ms = new MemoryStream())
+                        try
                         {
-                            bmp.Save(ms, ImageFormat.Bmp);
-                            using (var md5 = MD5.Create())
+                            //convert to bitmap to remove EXIF data. 
+                            Bitmap bmp = (Bitmap)Image.FromFile(f);
+                            byte[] hash;
 
-                             hash = md5.ComputeHash(ms);
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                bmp.Save(ms, ImageFormat.Bmp);
+                                using (var md5 = MD5.Create())
 
-                            fileDictionary.Add(f, System.Text.Encoding.Default.GetString(hash));
+                                    hash = md5.ComputeHash(ms);
+
+                                fileDictionary.Add(f, System.Text.Encoding.Default.GetString(hash));
+                                progressBar1.PerformStep();
+                            }
+                        }
+                        catch
+                        {
+                            //TODO Logging
                         }
                     }
                     else
-                    {
-                        //Hash the file and store to dict
-                        byte[] hash;
-                        using (var md5 = MD5.Create())
-                        using (var stream = File.OpenRead(f))
-                            hash = md5.ComputeHash(stream);
+                        try
+                        {
+                            {
+                       
+                            //Hash the file and store to dict
+                            byte[] hash;
+                            using (var md5 = MD5.Create())
+                            using (var stream = File.OpenRead(f))
+                                hash = md5.ComputeHash(stream);
 
-                        fileDictionary.Add(f, System.Text.Encoding.Default.GetString(hash));
-                    }
+                            fileDictionary.Add(f, System.Text.Encoding.Default.GetString(hash));
+                            progressBar1.PerformStep();
+                        }
+                        }
+                    catch
+                    {
+                            //TODO Logging
+                        }
                 }
             }
             else if(cmbSearchMethod.Text == "Filename")
@@ -109,10 +136,11 @@ namespace DuplicateFinder
                 return;
             }
 
-            Form2 frmForm2 = new Form2(y);
+                Form2 frmForm2 = new Form2(y);
                 frmForm2.FormClosed += new FormClosedEventHandler(frmForm2_FormClosed);
                 frmForm2.Show();
                 this.Hide();
+                progressBar1.Hide();
 
         }
 

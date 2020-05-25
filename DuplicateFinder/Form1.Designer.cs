@@ -39,6 +39,7 @@
             this.btnSelectFolder = new System.Windows.Forms.Button();
             this.chkEXIF = new System.Windows.Forms.CheckBox();
             this.lblEXIF = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // lblFolder
@@ -58,7 +59,7 @@
             // txtFolder
             // 
             this.txtFolder.Location = new System.Drawing.Point(99, 24);
-            this.txtFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFolder.Margin = new System.Windows.Forms.Padding(2);
             this.txtFolder.Name = "txtFolder";
             this.txtFolder.Size = new System.Drawing.Size(210, 20);
             this.txtFolder.TabIndex = 1;
@@ -79,7 +80,7 @@
             // 
             this.chkSubfolders.AutoSize = true;
             this.chkSubfolders.Location = new System.Drawing.Point(293, 67);
-            this.chkSubfolders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkSubfolders.Margin = new System.Windows.Forms.Padding(2);
             this.chkSubfolders.Name = "chkSubfolders";
             this.chkSubfolders.Size = new System.Drawing.Size(15, 14);
             this.chkSubfolders.TabIndex = 3;
@@ -88,7 +89,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(248, 105);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(96, 45);
             this.btnSearch.TabIndex = 4;
@@ -110,7 +111,7 @@
             // 
             this.cmbSearchMethod.FormattingEnabled = true;
             this.cmbSearchMethod.Location = new System.Drawing.Point(99, 45);
-            this.cmbSearchMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSearchMethod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSearchMethod.Name = "cmbSearchMethod";
             this.cmbSearchMethod.Size = new System.Drawing.Size(210, 21);
             this.cmbSearchMethod.TabIndex = 6;
@@ -120,7 +121,7 @@
             // 
             this.btnSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectFolder.Location = new System.Drawing.Point(313, 24);
-            this.btnSelectFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectFolder.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectFolder.Name = "btnSelectFolder";
             this.btnSelectFolder.Size = new System.Drawing.Size(31, 20);
             this.btnSelectFolder.TabIndex = 7;
@@ -149,11 +150,19 @@
             this.lblEXIF.TabIndex = 8;
             this.lblEXIF.Text = "Ignore EXIF";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 126);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(231, 23);
+            this.progressBar1.TabIndex = 10;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 161);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.chkEXIF);
             this.Controls.Add(this.lblEXIF);
             this.Controls.Add(this.btnSelectFolder);
@@ -164,7 +173,7 @@
             this.Controls.Add(this.lblSubfolders);
             this.Controls.Add(this.txtFolder);
             this.Controls.Add(this.lblFolder);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Duplicate Finder";
             this.ResumeLayout(false);
@@ -185,6 +194,7 @@
         private System.Windows.Forms.Button btnSelectFolder;
         private System.Windows.Forms.CheckBox chkEXIF;
         private System.Windows.Forms.Label lblEXIF;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
