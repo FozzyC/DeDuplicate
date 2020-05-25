@@ -42,9 +42,10 @@
             // lblFolder
             // 
             this.lblFolder.AutoSize = true;
-            this.lblFolder.Location = new System.Drawing.Point(29, 37);
+            this.lblFolder.Location = new System.Drawing.Point(19, 24);
+            this.lblFolder.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFolder.Name = "lblFolder";
-            this.lblFolder.Size = new System.Drawing.Size(113, 20);
+            this.lblFolder.Size = new System.Drawing.Size(76, 13);
             this.lblFolder.TabIndex = 0;
             this.lblFolder.Text = "Search Folder:";
             // 
@@ -54,37 +55,40 @@
             // 
             // txtFolder
             // 
-            this.txtFolder.Location = new System.Drawing.Point(149, 37);
+            this.txtFolder.Location = new System.Drawing.Point(99, 24);
+            this.txtFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFolder.Name = "txtFolder";
-            this.txtFolder.Size = new System.Drawing.Size(313, 26);
+            this.txtFolder.Size = new System.Drawing.Size(210, 20);
             this.txtFolder.TabIndex = 1;
-            this.txtFolder.Text = "C:\\TemporaryCF";
             this.txtFolder.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseClick);
             this.txtFolder.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblSubfolders
             // 
             this.lblSubfolders.AutoSize = true;
-            this.lblSubfolders.Location = new System.Drawing.Point(284, 102);
+            this.lblSubfolders.Location = new System.Drawing.Point(189, 66);
+            this.lblSubfolders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubfolders.Name = "lblSubfolders";
-            this.lblSubfolders.Size = new System.Drawing.Size(150, 20);
+            this.lblSubfolders.Size = new System.Drawing.Size(100, 13);
             this.lblSubfolders.TabIndex = 2;
             this.lblSubfolders.Text = "Search Subfolders?";
             // 
             // chkSubfolders
             // 
             this.chkSubfolders.AutoSize = true;
-            this.chkSubfolders.Location = new System.Drawing.Point(440, 103);
+            this.chkSubfolders.Location = new System.Drawing.Point(293, 67);
+            this.chkSubfolders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkSubfolders.Name = "chkSubfolders";
-            this.chkSubfolders.Size = new System.Drawing.Size(22, 21);
+            this.chkSubfolders.Size = new System.Drawing.Size(15, 14);
             this.chkSubfolders.TabIndex = 3;
             this.chkSubfolders.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(367, 142);
+            this.btnSearch.Location = new System.Drawing.Point(245, 92);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(95, 35);
+            this.btnSearch.Size = new System.Drawing.Size(96, 45);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -93,36 +97,41 @@
             // lblSearchMethod
             // 
             this.lblSearchMethod.AutoSize = true;
-            this.lblSearchMethod.Location = new System.Drawing.Point(20, 69);
+            this.lblSearchMethod.Location = new System.Drawing.Point(13, 45);
+            this.lblSearchMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchMethod.Name = "lblSearchMethod";
-            this.lblSearchMethod.Size = new System.Drawing.Size(122, 20);
+            this.lblSearchMethod.Size = new System.Drawing.Size(83, 13);
             this.lblSearchMethod.TabIndex = 5;
             this.lblSearchMethod.Text = "Search Method:";
             // 
             // cmbSearchMethod
             // 
             this.cmbSearchMethod.FormattingEnabled = true;
-            this.cmbSearchMethod.Location = new System.Drawing.Point(149, 69);
+            this.cmbSearchMethod.Location = new System.Drawing.Point(99, 45);
+            this.cmbSearchMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbSearchMethod.Name = "cmbSearchMethod";
-            this.cmbSearchMethod.Size = new System.Drawing.Size(313, 28);
+            this.cmbSearchMethod.Size = new System.Drawing.Size(210, 21);
             this.cmbSearchMethod.TabIndex = 6;
             this.cmbSearchMethod.SelectedIndexChanged += new System.EventHandler(this.cmbSearchMethod_SelectedIndexChanged);
             // 
             // btnSelectFolder
             // 
-            this.btnSelectFolder.Location = new System.Drawing.Point(469, 37);
+            this.btnSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectFolder.Location = new System.Drawing.Point(313, 24);
+            this.btnSelectFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelectFolder.Name = "btnSelectFolder";
-            this.btnSelectFolder.Size = new System.Drawing.Size(47, 26);
+            this.btnSelectFolder.Size = new System.Drawing.Size(31, 20);
             this.btnSelectFolder.TabIndex = 7;
             this.btnSelectFolder.Text = "...";
+            this.btnSelectFolder.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSelectFolder.UseVisualStyleBackColor = true;
             this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 228);
+            this.ClientSize = new System.Drawing.Size(352, 148);
             this.Controls.Add(this.btnSelectFolder);
             this.Controls.Add(this.cmbSearchMethod);
             this.Controls.Add(this.lblSearchMethod);
@@ -131,6 +140,7 @@
             this.Controls.Add(this.lblSubfolders);
             this.Controls.Add(this.txtFolder);
             this.Controls.Add(this.lblFolder);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.Text = "Duplicate Finder";
             this.ResumeLayout(false);

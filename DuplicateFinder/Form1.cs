@@ -19,6 +19,7 @@ namespace DuplicateFinder
         public Main()
         {
             InitializeComponent();
+            txtFolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             cmbSearchMethod.DataSource = listSearchMethod;
             cmbSearchMethod.SelectedIndex = 1;
         }
@@ -34,6 +35,7 @@ namespace DuplicateFinder
         private void btnSelectFolder_Click(object sender, EventArgs e)
         {
             //bring up folder search dialog.
+            folderBrowserDialog1.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures); ;
             folderBrowserDialog1.ShowDialog();
             txtFolder.Text = folderBrowserDialog1.SelectedPath;
         }
