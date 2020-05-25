@@ -37,6 +37,8 @@
             this.lblSearchMethod = new System.Windows.Forms.Label();
             this.cmbSearchMethod = new System.Windows.Forms.ComboBox();
             this.btnSelectFolder = new System.Windows.Forms.Button();
+            this.chkEXIF = new System.Windows.Forms.CheckBox();
+            this.lblEXIF = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFolder
@@ -69,9 +71,9 @@
             this.lblSubfolders.Location = new System.Drawing.Point(189, 66);
             this.lblSubfolders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubfolders.Name = "lblSubfolders";
-            this.lblSubfolders.Size = new System.Drawing.Size(100, 13);
+            this.lblSubfolders.Size = new System.Drawing.Size(94, 13);
             this.lblSubfolders.TabIndex = 2;
-            this.lblSubfolders.Text = "Search Subfolders?";
+            this.lblSubfolders.Text = "Search Subfolders";
             // 
             // chkSubfolders
             // 
@@ -85,7 +87,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(245, 92);
+            this.btnSearch.Location = new System.Drawing.Point(248, 105);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(96, 45);
@@ -127,11 +129,33 @@
             this.btnSelectFolder.UseVisualStyleBackColor = true;
             this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
             // 
+            // chkEXIF
+            // 
+            this.chkEXIF.AutoSize = true;
+            this.chkEXIF.Location = new System.Drawing.Point(293, 84);
+            this.chkEXIF.Margin = new System.Windows.Forms.Padding(2);
+            this.chkEXIF.Name = "chkEXIF";
+            this.chkEXIF.Size = new System.Drawing.Size(15, 14);
+            this.chkEXIF.TabIndex = 9;
+            this.chkEXIF.UseVisualStyleBackColor = true;
+            // 
+            // lblEXIF
+            // 
+            this.lblEXIF.AutoSize = true;
+            this.lblEXIF.Location = new System.Drawing.Point(220, 84);
+            this.lblEXIF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEXIF.Name = "lblEXIF";
+            this.lblEXIF.Size = new System.Drawing.Size(63, 13);
+            this.lblEXIF.TabIndex = 8;
+            this.lblEXIF.Text = "Ignore EXIF";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 148);
+            this.ClientSize = new System.Drawing.Size(352, 161);
+            this.Controls.Add(this.chkEXIF);
+            this.Controls.Add(this.lblEXIF);
             this.Controls.Add(this.btnSelectFolder);
             this.Controls.Add(this.cmbSearchMethod);
             this.Controls.Add(this.lblSearchMethod);
@@ -159,6 +183,8 @@
         private System.Windows.Forms.Label lblSearchMethod;
         private System.Windows.Forms.ComboBox cmbSearchMethod;
         private System.Windows.Forms.Button btnSelectFolder;
+        private System.Windows.Forms.CheckBox chkEXIF;
+        private System.Windows.Forms.Label lblEXIF;
     }
 }
 

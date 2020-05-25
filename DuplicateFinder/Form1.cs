@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -16,6 +17,8 @@ namespace DuplicateFinder
     public partial class Main : Form
     {
         List<string> listSearchMethod = new List<string>() {"Filename","Content"};
+        List<string> imageExtensions = new List<string>() {".JPG",".JPEG",".PNG","NEF","RAW"};
+
         public Main()
         {
             InitializeComponent();
@@ -61,14 +64,32 @@ namespace DuplicateFinder
             {
                 foreach (var f in fileList)
                 {
-                    //Hash the file and store to dict
-                    byte[] hash;
-                    using (var md5 = MD5.Create())
-                    using (var stream = File.OpenRead(f))
-                        hash = md5.ComputeHash(stream);
-                   
-                    fileDictionary.Add(f, System.Text.Encoding.Default.GetString(hash));
+                    if (chkEXIF.Checked && imageExtensions.Contains(Path.GetExtension(f).ToUpper()))
+                    {
+                        //convert to bitmap to remove EXIF data. 
+                        Bitmap bmp = (Bitmap)Image.FromFile(f);
+                        byte[] hash;
+                        
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            bmp.Save(ms, ImageFormat.Bmp);
+                            using (var md5 = MD5.Create())
 
+                             hash = md5.ComputeHash(ms);
+
+                            fileDictionary.Add(f, System.Text.Encoding.Default.GetString(hash));
+                        }
+                    }
+                    else
+                    {
+                        //Hash the file and store to dict
+                        byte[] hash;
+                        using (var md5 = MD5.Create())
+                        using (var stream = File.OpenRead(f))
+                            hash = md5.ComputeHash(stream);
+
+                        fileDictionary.Add(f, System.Text.Encoding.Default.GetString(hash));
+                    }
                 }
             }
             else if(cmbSearchMethod.Text == "Filename")
